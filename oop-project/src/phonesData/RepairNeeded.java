@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.Random;
 
 public class RepairNeeded {
-    ClientService clientService = new ClientService();
-
     public ArrayList<RepairNeeded> repairNeededs = new ArrayList<RepairNeeded>();
 
     Date date = new Date();
@@ -19,4 +17,8 @@ public class RepairNeeded {
     public int id = random.nextInt();
 
     public String price;
+
+    public void showRepairNeededData() {
+        System.out.println(repairNeededs);
+    }
 }

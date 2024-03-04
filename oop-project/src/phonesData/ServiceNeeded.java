@@ -16,6 +16,9 @@ public class ServiceNeeded {
     int orderDate = date.getDate();
     public String option;
     public int id = random.nextInt();
-
     public String price;
+
+    public void showServiceNeededData() {
+        System.out.println(serviceNeededs);
+    }
 }

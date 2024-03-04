@@ -16,6 +16,9 @@ public class ChangeNeeded {
     int orderDate = date.getDate();
     public String option;
     public int id = random.nextInt();
-
     public String price;
+
+    public void showChangeNeededData() {
+        System.out.println(changeNeededs);
+    }
 }

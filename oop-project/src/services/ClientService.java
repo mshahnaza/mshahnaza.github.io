@@ -2,10 +2,10 @@ package services;
 
 import loginData.LoginData;
 import phonesData.ChangeNeeded;
+import phonesData.CheckStatus;
 import phonesData.RepairNeeded;
 import phonesData.ServiceNeeded;
 import phonesData.finishedWorks.Repaired;
-import users.Client;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,8 +17,7 @@ public class ClientService {
     public int enteredId;
 
     public void showMenu() {
-        System.out.print("Greetings dear Client!\n" + "Please press the menu number to work with the program: ");
-        int menuNumber = scanner.nextInt();
+        System.out.print("Greetings dear Client!\n" + "Please press the menu number to work with the program");
         System.out.println("1. SEND FOR REPAIR:\n" +
                 "   • Please select a category of equipment for repair\n" +
                 "   1) Repair the display - $50(1.1)\n" +
@@ -37,102 +36,103 @@ public class ClientService {
                 "   2) Cleaning from scratches - $10(3.2)\n" +
                 "4.CHECK STATUS:\n" +
                 "• Select a category to check:\n" +
-                "   1) Repair(4.1)\n" +
+                "   1) Repair\n" +
                 "   • Write the serial number of your phone\n" +
-                "   2) Service(4.2)\n" +
+                "   2) Service\n" +
                 "   • Write the serial number of your phone\n" +
-                "   3) Replacement(4.3)\n" +
+                "   3) Replacement\n" +
                 "   • Write the serial number of your phone\n" +
                 "5. EXIT");
     }
 
-    public void enterPassword() {
+    public void serveClient() {
+        System.out.print("Please enter the password: ");
         String enteredPassword = scanner.next();
-        while(enteredPassword != loginData.clientPassword) {
+        while(!enteredPassword.equals(loginData.clientPassword)) {
+            System.out.println("Entered password is incorrect! Please try again");
             System.out.print("Please enter the password: ");
             enteredPassword = scanner.next();
-            if(enteredPassword != loginData.clientPassword) {
-                System.out.println("Entered password is incorrect! Please try again");
-            }
         }
-        Client client = new Client();
         showMenu();
         System.out.print("Enter the number: ");
         String choosenOption = scanner.next();
-        if(choosenOption == "1.1") {
+        if(choosenOption.equals("1.1")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair display";
             repairNeeded.price = "50$";
             repairNeeded.repairNeededs.add(repairNeeded);
-            System.out.println("Your id is " + repairNeeded.id);
+            repairNeeded.showRepairNeededData();
         }
-        else if(choosenOption == "1.2") {
+        else if(choosenOption.equals("1.2")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair keyboard";
             repairNeeded.price = "25$";
             repairNeeded.repairNeededs.add(repairNeeded);
-            System.out.println("Your id is " + repairNeeded.id);
+            repairNeeded.showRepairNeededData();
         }
-        else if(choosenOption == "1.3") {
+        else if(choosenOption.equals("1.3")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair internals";
             repairNeeded.price = "40$";
             repairNeeded.repairNeededs.add(repairNeeded);
-            System.out.println("Your id is " + repairNeeded.id);
+            repairNeeded.showRepairNeededData();
         }
-        else if(choosenOption == "2.1") {
+        else if(choosenOption.equals("2.1")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change battery";
             changeNeeded.price = "15$";
             changeNeeded.changeNeededs.add(changeNeeded);
-            System.out.println("Your id is " + changeNeeded.id);
+            changeNeeded.showChangeNeededData();
         }
-        else if(choosenOption == "2.2") {
+        else if(choosenOption.equals("2.2")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change display";
             changeNeeded.price = "40$";
             changeNeeded.changeNeededs.add(changeNeeded);
-            System.out.println("Your id is " + changeNeeded.id);
+            changeNeeded.showChangeNeededData();
         }
-        else if(choosenOption == "2.1") {
+        else if(choosenOption.equals("2.3")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change processor";
             changeNeeded.price = "40$";
             changeNeeded.changeNeededs.add(changeNeeded);
-            System.out.println("Your id is " + changeNeeded.id);
+            changeNeeded.showChangeNeededData();
         }
-        else if(choosenOption == "2.1") {
+        else if(choosenOption.equals("2.4")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change motherboard";
             changeNeeded.price = "40$";
             changeNeeded.changeNeededs.add(changeNeeded);
-            System.out.println("Your id is " + changeNeeded.id);
+            changeNeeded.showChangeNeededData();
         }
-        else if(choosenOption == "2.1") {
+        else if(choosenOption.equals("2.5")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change RAM";
             changeNeeded.price = "20$";
             changeNeeded.changeNeededs.add(changeNeeded);
-            System.out.println("Your id is " + changeNeeded.id);
+            changeNeeded.showChangeNeededData();
         }
-        else if(choosenOption == "3.1") {
+        else if(choosenOption.equals("3.1")) {
             ServiceNeeded serviceNeeded = new ServiceNeeded();
             serviceNeeded.option = "Dust Cleaning";
             serviceNeeded.price = "5$";
             serviceNeeded.serviceNeededs.add(serviceNeeded);
-            System.out.println("Your id is " + serviceNeeded.id);
+            serviceNeeded.showServiceNeededData();
         }
-        else if(choosenOption == "3.2") {
+        else if(choosenOption.equals("3.2")) {
             ServiceNeeded serviceNeeded = new ServiceNeeded();
             serviceNeeded.option = "Scratches cleaning";
             serviceNeeded.price = "10$";
             serviceNeeded.serviceNeededs.add(serviceNeeded);
-            System.out.println("Your id is " + serviceNeeded.id);
+            serviceNeeded.showServiceNeededData();
         }
-        else if(choosenOption == "4.1") {
-            Repaired repaired = new Repaired();
+        else if(choosenOption.equals("4")) {
+            CheckStatus checkStatus = new CheckStatus();
             System.out.println("Please enter your id: ");
             enteredId = scanner.nextInt();
+        }
+        else {
+            System.out.println("You have left the Menu!");
         }
     }
 }
