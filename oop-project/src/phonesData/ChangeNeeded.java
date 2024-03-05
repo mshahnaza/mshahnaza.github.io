@@ -19,6 +19,16 @@ public class ChangeNeeded {
     public String price;
 
     public void showChangeNeededData() {
-        System.out.println(changeNeededs);
+        int itemNumber = 1;
+        for(int i = 0; i < changeNeededs.size(); i++){
+            System.out.print(itemNumber + ") ");
+            System.out.print(changeNeededs);
+            System.out.println();
+            itemNumber++;
+        }
+    }
+
+    public void deleteEquipment(int index) {
+        changeNeededs.remove(index-1);
     }
 }

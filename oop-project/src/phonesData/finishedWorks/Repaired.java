@@ -9,6 +9,6 @@ public class Repaired {
     RepairNeeded repairNeeded = new RepairNeeded();
     ClientService clientService = new ClientService();
 
-    public ArrayList<Repaired> repairedPhones = new ArrayList<Repaired>();
+    public ArrayList<Repaired> repairDone = new ArrayList<Repaired>();
 
 }

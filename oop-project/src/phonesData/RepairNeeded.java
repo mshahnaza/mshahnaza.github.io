@@ -19,6 +19,16 @@ public class RepairNeeded {
     public String price;
 
     public void showRepairNeededData() {
-        System.out.println(repairNeededs);
+        int itemNumber = 1;
+        for(int i = 0; i < repairNeededs.size(); i++) {
+            System.out.print(itemNumber + ") ");
+            System.out.print(repairNeededs.get(i));
+            System.out.println();
+            itemNumber++;
+        }
+    }
+
+    public void deleteEquipment(int index) {
+        repairNeededs.remove(index-1);
     }
 }

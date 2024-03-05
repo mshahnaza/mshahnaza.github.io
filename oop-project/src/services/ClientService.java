@@ -46,16 +46,19 @@ public class ClientService {
     }
 
     public void serveClient() {
-        System.out.print("Please enter the password: ");
+        System.out.print("Please enter your password: ");
         String enteredPassword = scanner.next();
         while(!enteredPassword.equals(loginData.clientPassword)) {
+            System.out.print("\033[H\033[2J");
             System.out.println("Entered password is incorrect! Please try again");
-            System.out.print("Please enter the password: ");
+            System.out.print("Please enter your password: ");
             enteredPassword = scanner.next();
         }
+        System.out.print("\033[H\033[2J");
         showMenu();
         System.out.print("Enter the number: ");
         String choosenOption = scanner.next();
+        System.out.print("\033[H\033[2J");
         if(choosenOption.equals("1.1")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair display";
@@ -130,6 +133,7 @@ public class ClientService {
             CheckStatus checkStatus = new CheckStatus();
             System.out.println("Please enter your id: ");
             enteredId = scanner.nextInt();
+            checkStatus.checkPhone();
         }
         else {
             System.out.println("You have left the Menu!");

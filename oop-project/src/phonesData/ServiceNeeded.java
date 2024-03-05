@@ -19,6 +19,16 @@ public class ServiceNeeded {
     public String price;
 
     public void showServiceNeededData() {
-        System.out.println(serviceNeededs);
+        int itemNumber = 1;
+        for(int i = 0; i < serviceNeededs.size(); i++) {
+            System.out.print(itemNumber + ") ");
+            System.out.print(serviceNeededs);
+            System.out.println();
+            itemNumber++;
+        }
+    }
+
+    public void deleteEquipment(int index) {
+        serviceNeededs.remove(index-1);
     }
 }

@@ -2,6 +2,7 @@ package login;
 
 import loginData.LoginData;
 import services.ClientService;
+import services.RepairmanService;
 import users.Client;
 
 import java.util.Scanner;
@@ -17,6 +18,9 @@ public class Login {
         if(accountType.equals(loginData.clientLogin)) {
             ClientService clientService = new ClientService();
             clientService.serveClient();
+        }
+        if(accountType.equals(loginData.repairLogin)) {
+            RepairmanService repairmanService = new RepairmanService();
         }
     }
 }
