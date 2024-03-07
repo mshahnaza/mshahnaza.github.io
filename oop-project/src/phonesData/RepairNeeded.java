@@ -9,14 +9,20 @@ import java.util.Random;
 public class RepairNeeded {
     public ArrayList<RepairNeeded> repairNeededs = new ArrayList<RepairNeeded>();
 
+
     Date date = new Date();
 
     Random random = new Random();
-    int orderDate = date.getDate();
+    String orderDate = date.toString();
     public String option;
     public int id = random.nextInt();
 
     public String price;
+
+    @Override
+    public String toString() {
+        return this.option + "-" + this.price + " id: " + this.id + " " + "date: " + this.orderDate;
+    }
 
     public void showRepairNeededData() {
         int itemNumber = 1;
@@ -27,6 +33,7 @@ public class RepairNeeded {
             itemNumber++;
         }
     }
+
 
     public void deleteEquipment(int index) {
         repairNeededs.remove(index-1);

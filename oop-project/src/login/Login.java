@@ -21,6 +21,7 @@ public class Login {
         }
         if(accountType.equals(loginData.repairLogin)) {
             RepairmanService repairmanService = new RepairmanService();
+            repairmanService.serveRepairman();
         }
     }
 }

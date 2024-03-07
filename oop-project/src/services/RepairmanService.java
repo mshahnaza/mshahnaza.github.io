@@ -41,10 +41,24 @@ public class RepairmanService {
         int choosenOption = scanner.nextInt();
         if(choosenOption == 1) {
             RepairNeeded repairNeeded = new RepairNeeded();
+            /*only to show how code works*/
+            repairNeeded.option = "Repair display";
+            repairNeeded.price = "50$";
+            repairNeeded.repairNeededs.add(repairNeeded);
+            repairNeeded.option = "Repair keyboard";
+            repairNeeded.price = "25$";
+            repairNeeded.repairNeededs.add(repairNeeded);
+            /*only to show how code works*/
             repairNeeded.showRepairNeededData();
-            System.out.println("Which of the proposed equipment would you like to repair? : ");
+            System.out.println("Which of the proposed equipment would you like to repair?");
             int choosenEquipment = scanner.nextInt();
             repairNeeded.deleteEquipment(choosenEquipment);
+            if(!repairNeeded.repairNeededs.isEmpty()) {
+                repairNeeded.showRepairNeededData();
+            }
+            else {
+                System.out.println("Nothing is left to repair");
+            }
         }
         if(choosenOption == 2) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
@@ -61,4 +75,5 @@ public class RepairmanService {
             serviceNeeded.deleteEquipment(choosenEquipment);
         }
     }
+
 }
