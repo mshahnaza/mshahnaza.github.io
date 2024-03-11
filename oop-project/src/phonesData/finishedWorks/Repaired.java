@@ -6,9 +6,7 @@ import services.ClientService;
 import java.util.ArrayList;
 
 public class Repaired {
-    RepairNeeded repairNeeded = new RepairNeeded();
-    ClientService clientService = new ClientService();
 
-    public ArrayList<Repaired> repairDone = new ArrayList<Repaired>();
+    public ArrayList<RepairNeeded> repairDone = new ArrayList<RepairNeeded>();
 
 }

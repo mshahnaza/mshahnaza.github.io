@@ -1,15 +1,12 @@
 package phonesData;
 
-import services.ClientService;
+import phonesData.finishedWorks.Repaired;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
 public class RepairNeeded {
-    public ArrayList<RepairNeeded> repairNeededs = new ArrayList<RepairNeeded>();
-
-
     Date date = new Date();
 
     Random random = new Random();
@@ -17,12 +14,14 @@ public class RepairNeeded {
     public String option;
     public int id = random.nextInt();
 
-    public String price;
+    public int price;
 
-    @Override
+
     public String toString() {
-        return this.option + "-" + this.price + " id: " + this.id + " " + "date: " + this.orderDate;
+        return this.option + "-" + this.price + "$ id: " + this.id + " " + "date: " + this.orderDate;
     }
+
+    public ArrayList<RepairNeeded> repairNeededs = new ArrayList<RepairNeeded>();
 
     public void showRepairNeededData() {
         int itemNumber = 1;
@@ -36,6 +35,8 @@ public class RepairNeeded {
 
 
     public void deleteEquipment(int index) {
+        Repaired repaired = new Repaired();
+        repaired.repairDone.add(repairNeededs.get(index-1));
         repairNeededs.remove(index-1);
     }
 }

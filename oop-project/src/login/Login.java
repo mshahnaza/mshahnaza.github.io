@@ -3,7 +3,7 @@ package login;
 import loginData.LoginData;
 import services.ClientService;
 import services.RepairmanService;
-import users.Client;
+import services.WorkerService;
 
 import java.util.Scanner;
 
@@ -22,6 +22,10 @@ public class Login {
         if(accountType.equals(loginData.repairLogin)) {
             RepairmanService repairmanService = new RepairmanService();
             repairmanService.serveRepairman();
+        }
+        if(accountType.equals(loginData.workerLogin)) {
+            WorkerService workerService = new WorkerService();
+            workerService.serveWorker();
         }
     }
 }

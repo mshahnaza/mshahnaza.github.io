@@ -62,70 +62,70 @@ public class ClientService {
         if(choosenOption.equals("1.1")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair display";
-            repairNeeded.price = "50$";
+            repairNeeded.price = 50;
             repairNeeded.repairNeededs.add(repairNeeded);
             repairNeeded.showRepairNeededData();
         }
         else if(choosenOption.equals("1.2")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair keyboard";
-            repairNeeded.price = "25$";
+            repairNeeded.price = 25;
             repairNeeded.repairNeededs.add(repairNeeded);
             repairNeeded.showRepairNeededData();
         }
         else if(choosenOption.equals("1.3")) {
             RepairNeeded repairNeeded = new RepairNeeded();
             repairNeeded.option = "Repair internals";
-            repairNeeded.price = "40$";
+            repairNeeded.price = 40;
             repairNeeded.repairNeededs.add(repairNeeded);
             repairNeeded.showRepairNeededData();
         }
         else if(choosenOption.equals("2.1")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change battery";
-            changeNeeded.price = "15$";
+            changeNeeded.price = 15;
             changeNeeded.changeNeededs.add(changeNeeded);
             changeNeeded.showChangeNeededData();
         }
         else if(choosenOption.equals("2.2")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change display";
-            changeNeeded.price = "40$";
+            changeNeeded.price = 40;
             changeNeeded.changeNeededs.add(changeNeeded);
             changeNeeded.showChangeNeededData();
         }
         else if(choosenOption.equals("2.3")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change processor";
-            changeNeeded.price = "40$";
+            changeNeeded.price = 40;
             changeNeeded.changeNeededs.add(changeNeeded);
             changeNeeded.showChangeNeededData();
         }
         else if(choosenOption.equals("2.4")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change motherboard";
-            changeNeeded.price = "40$";
+            changeNeeded.price = 40;
             changeNeeded.changeNeededs.add(changeNeeded);
             changeNeeded.showChangeNeededData();
         }
         else if(choosenOption.equals("2.5")) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
             changeNeeded.option = "Change RAM";
-            changeNeeded.price = "20$";
+            changeNeeded.price = 20;
             changeNeeded.changeNeededs.add(changeNeeded);
             changeNeeded.showChangeNeededData();
         }
         else if(choosenOption.equals("3.1")) {
             ServiceNeeded serviceNeeded = new ServiceNeeded();
             serviceNeeded.option = "Dust Cleaning";
-            serviceNeeded.price = "5$";
+            serviceNeeded.price = 5;
             serviceNeeded.serviceNeededs.add(serviceNeeded);
             serviceNeeded.showServiceNeededData();
         }
         else if(choosenOption.equals("3.2")) {
             ServiceNeeded serviceNeeded = new ServiceNeeded();
             serviceNeeded.option = "Scratches cleaning";
-            serviceNeeded.price = "10$";
+            serviceNeeded.price = 10;
             serviceNeeded.serviceNeededs.add(serviceNeeded);
             serviceNeeded.showServiceNeededData();
         }

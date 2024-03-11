@@ -1,7 +1,9 @@
 package phonesData.finishedWorks;
 
+import phonesData.ChangeNeeded;
+
 import java.util.ArrayList;
 
 public class Changed {
-    public ArrayList<Changed> changeDone = new ArrayList<Changed>();
+    public ArrayList<ChangeNeeded> changeDone = new ArrayList<ChangeNeeded>();
 }
