@@ -8,14 +8,21 @@ public class DetailOrdered {
     public ArrayList<DetailOrdered> detailsOrdered = new ArrayList<DetailOrdered>();
 
     public String detailName;
+    public int detailsNumber;
 
     public void showOrderList() {
-        int itemNumber = 1;
-        for(int i = 0; i < detailsOrdered.size(); i++) {
-            System.out.print(itemNumber + ") ");
-            System.out.print(detailsOrdered.get(i));
-            System.out.println();
-            itemNumber++;
+        if(!detailsOrdered.isEmpty()) {
+            int itemNumber = 1;
+            for (int i = 0; i < detailsOrdered.size(); i++) {
+                System.out.print(itemNumber + ") ");
+                DetailOrdered detailOrdered = detailsOrdered.get(i);
+                System.out.print(detailOrdered.detailName + "-" + detailOrdered.detailsNumber);
+                System.out.println();
+                itemNumber++;
+            }
+        }
+        else {
+            System.out.println("Orders list is empty");
         }
     }
 

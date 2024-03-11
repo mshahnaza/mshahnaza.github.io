@@ -1,7 +1,5 @@
 package loginData;
 
-import users.Client;
-
 import java.util.Scanner;
 
 public class LoginData {

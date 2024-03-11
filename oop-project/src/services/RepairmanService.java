@@ -3,6 +3,7 @@ package services;
 import loginData.LoginData;
 import phonesData.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RepairmanService {
@@ -50,12 +51,7 @@ public class RepairmanService {
             int choosenEquipment = scanner.nextInt();
             System.out.print("\033[H\033[2J");
             repairNeeded.deleteEquipment(choosenEquipment);
-            if(!repairNeeded.repairNeededs.isEmpty()) {
-                repairNeeded.showRepairNeededData();
-            }
-            else {
-                System.out.println("Nothing is left to repair");
-            }
+            repairNeeded.showRepairNeededData();
         }
         else if(choosenOption == 2) {
             ChangeNeeded changeNeeded = new ChangeNeeded();
@@ -68,16 +64,12 @@ public class RepairmanService {
             changeNeeded.price = 40;
             changeNeeded.changeNeededs.add(changeNeeded);
             /*only to show how code works*/
+            changeNeeded.showChangeNeededData();
             System.out.println("For which of the proposed techniques would you like to change detail? : ");
             int choosenEquipment = scanner.nextInt();
             System.out.print("\033[H\033[2J");
             changeNeeded.deleteEquipment(choosenEquipment);
-            if(!changeNeeded.changeNeededs.isEmpty()) {
-                changeNeeded.showChangeNeededData();
-            }
-            else {
-                System.out.println("Nothing is left to repair");
-            }
+            changeNeeded.showChangeNeededData();
         }
         else if(choosenOption == 3) {
             ServiceNeeded serviceNeeded = new ServiceNeeded();
@@ -87,21 +79,19 @@ public class RepairmanService {
             serviceNeeded.price = 5;
             serviceNeeded.serviceNeededs.add(serviceNeeded);
             /*only to show how code works*/
+            serviceNeeded.showServiceNeededData();
             System.out.println("Which of the proposed equipments would you like to serve?");
             int choosenEquipment = scanner.nextInt();
             System.out.print("\033[H\033[2J");
             serviceNeeded.deleteEquipment(choosenEquipment);
-            if(!serviceNeeded.serviceNeededs.isEmpty()) {
-                serviceNeeded.showServiceNeededData();
-            }
-            else {
-                System.out.println("Nothing is left to repair");
-            }
+            serviceNeeded.showServiceNeededData();
         }
         else if(choosenOption == 4) {
             DetailOrdered detailOrdered = new DetailOrdered();
             System.out.print("Please write which detail you would like to order: ");
             detailOrdered.detailName = scanner.next();
+            System.out.println("Please enter number of details: ");
+            detailOrdered.detailsNumber = scanner.nextInt();
             System.out.print("\033[H\033[2J");
             detailOrdered.detailsOrdered.add(detailOrdered);
             detailOrdered.showOrderList();
@@ -120,16 +110,12 @@ public class RepairmanService {
             detailOrdered.detailName = "Battery";
             detailOrdered.detailsOrdered.add(detailOrdered);
             /*only to show how code works*/
+            detailOrdered.showOrderList();
             System.out.println("Which order would you like to remove?");
             int choosenEquipment = scanner.nextInt();
             System.out.print("\033[H\033[2J");
             detailOrdered.removeOrder(choosenEquipment);
-            if(!detailOrdered.detailsOrdered.isEmpty()) {
-                detailOrdered.showOrderList();
-            }
-            else {
-                System.out.println("Nothing is left to repair");
-            }
+            detailOrdered.showOrderList();
         }
         else {
             System.out.println("You have left the Menu!");
