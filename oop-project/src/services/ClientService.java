@@ -2,12 +2,9 @@ package services;
 
 import loginData.LoginData;
 import phonesData.ChangeNeeded;
-import phonesData.CheckStatus;
 import phonesData.RepairNeeded;
 import phonesData.ServiceNeeded;
-import phonesData.finishedWorks.Repaired;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClientService {
@@ -34,15 +31,7 @@ public class ClientService {
                 "• Please select the type of service: >>>\n" +
                 "   1) Dust cleaning - $5(3.1)\n" +
                 "   2) Cleaning from scratches - $10(3.2)\n" +
-                "4.CHECK STATUS:\n" +
-                "• Select a category to check:\n" +
-                "   1) Repair\n" +
-                "   • Write the serial number of your phone\n" +
-                "   2) Service\n" +
-                "   • Write the serial number of your phone\n" +
-                "   3) Replacement\n" +
-                "   • Write the serial number of your phone\n" +
-                "5. EXIT");
+                "4. EXIT");
     }
 
     public void serveClient() {
@@ -128,12 +117,6 @@ public class ClientService {
             serviceNeeded.price = 10;
             serviceNeeded.serviceNeededs.add(serviceNeeded);
             serviceNeeded.showServiceNeededData();
-        }
-        else if(choosenOption.equals("4")) {
-            CheckStatus checkStatus = new CheckStatus();
-            System.out.println("Please enter your id: ");
-            enteredId = scanner.nextInt();
-            checkStatus.checkPhone();
         }
         else {
             System.out.println("You have left the Menu!");

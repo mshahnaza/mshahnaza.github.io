@@ -10,7 +10,7 @@ public class LoginData {
     public String repairPassword = "r123";
 
     public String supplierLogin = "supplier";
-    public String supplierPassword = "s213";
+    public String supplierPassword = "s123";
 
     public String workerLogin = "worker";
     public String workerPassword = "w123";
